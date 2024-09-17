@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row text-center">
+    <h3 class="mb-3">Signup</h3>
+    <form action="{% url 'users:signup' %}" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="row">
+        <div class="col-7 text-end">
+            <button type="submit"class="btn btn-secondary px-5">Signup</button>
+        </div>
+        <!-- <div class="col-6 text-start">
+            <a href="{% url 'users:login' %}" class="btn btn-secondary px-5">Return</a> -->
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock content %}
